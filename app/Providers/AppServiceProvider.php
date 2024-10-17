@@ -6,6 +6,7 @@ use App\Models\Pekerjaan;
 use App\Observers\PekerjaanObserver;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -26,5 +27,8 @@ class AppServiceProvider extends ServiceProvider
         // Model::preventLazyLoading();
         Pekerjaan::observe(PekerjaanObserver::class);
         Paginator::useTailwind();
+        if ($this->app->environment('production')) {
+            URL::forceScheme('https');
+        }
     }
 }
