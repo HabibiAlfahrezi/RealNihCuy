@@ -6,7 +6,7 @@
         <div class="w-full">
 
             <!-- Search Form -->
-            <form action="" name="searchForm" id="searchForm" class="flex flex-col md:flex-row bg-transparent justify-between items-center p-4 border border-gray-300 rounded-lg space-y-4 md:space-y-0">
+            <form action="" name="searchForm" id="searchForm" class="flex flex-col md:hidden bg-transparent justify-between items-center p-4 border border-gray-300 rounded-lg space-y-4 md:space-y-0">
                 <div class="flex flex-col md:flex-row w-full md:w-auto">
                     <!-- Job Title Input -->
                     <div class="search flex items-center mb-4 md:mb-0 md:mr-4 w-full md:w-auto">

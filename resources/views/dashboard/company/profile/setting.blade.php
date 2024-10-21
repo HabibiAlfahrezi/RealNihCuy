@@ -1,9 +1,9 @@
 @extends('dashboard.layouts.base')
 @section('content')
+@include('dashboard.components.partials.alert')
 <section class="">
     <div class="container px-4">
         <div class="flex flex-col bg-white">
-            @include('dashboard.components.partials.alert')
             <!-- Tab Navigation -->
             {{-- <div class="flex border-b border-gray-300 md:mb-4">
                 <button id="profile-tab" class="py-2 pr-4 text-textSecondary border-b-2 border-transparent hover:border-blue-500 focus:outline-none transition-colors">

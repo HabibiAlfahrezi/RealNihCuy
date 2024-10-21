@@ -78,11 +78,14 @@ route::group(['middleware' => 'auth' , 'prefix' => 'dashboard'], function () {
         route::post('/project-update', [UserController::class, 'projectStore'])->name('project.store');
         route::post('/background-update', [UserController::class, 'backgroundStore'])->name('background.store');
         route::post('/document-update', [UserController::class, 'documentStore'])->name('document.store');
+        route::get('/document-delete/{id}', [UserController::class, 'documentDelete'])->name('document.delete');
         route::post('/role-update', [UserController::class, 'roleStore'])->name('role.store');
         route::post('/profile-update', [UserController::class, 'profileStore'])->name('profile.store');
 
         // User Setting
         route::get('/setting', [UserController::class, 'create'])->name('dashboard.usersetting');
+        route::POST('/setting/email/{id}', [UserController::class, 'userEmailUpdate'])->name('user.email.update');
+        route::POST('/setting/password/{id}', [UserController::class, 'userPasswordUpdate'])->name('user.password.update');
         route::post('/update', [UserController::class, 'userUpdate'])->name('user.update');
         route::post('/other-update', [UserController::class, 'userOtherStore'])->name('user.other.update');
 

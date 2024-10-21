@@ -13,7 +13,6 @@
     <button id="close-sidebar" class="absolute top-2 right-2 bg-gray-200 p-2 rounded-full">✖</button>
 </div>
 
-<!-- Ensure you have Alpine.js included -->
-<script src="https://cdn.jsdelivr.net/npm/alpinejs@2.x.x/dist/alpine.min.js" defer></script>
+
 
 @endsection

@@ -396,7 +396,11 @@
           >
             <li>
               <a
-                href="{{ route('dashboard.companyprofile') }}"
+                @if (Auth::user()->prosesi === 'company')
+                  href="{{ route('dashboard.companyprofile') }}"
+                  @elseif (Auth::user()->prosesi === 'user')
+                  href="{{ route('dashboard.userprofile') }}"
+                @endif
                 class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base"
               >
                 <svg

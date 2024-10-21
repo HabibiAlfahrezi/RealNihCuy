@@ -26,7 +26,7 @@
         x-transition:leave-end="opacity-0 transform translate-y-1/2"
         @click.away="isModalOpen = false"
         @keydown.escape="isModalOpen = false"
-        class="w-full px-6 py-4 overflow-hidden bg-white rounded-t-lg dark:bg-gray-800 sm:rounded-lg sm:m-4 sm:max-w-xl"
+        class="w-full px-6 py-4 overflow-hidden bg-white rounded-t-lg dark:bg-gray-800 sm:rounded-lg sm:m-4 sm:max-w-md"
         role="dialog"
     >
         <!-- Modal header -->
@@ -56,7 +56,7 @@
         </header>
 
         <!-- Modal body -->
-        <div class=" overflow-auto max-h-[50vh]">
+        <div class=" overflow-auto  max-h-[50vh] scrollbar-hide ">
             {{ $slot }}
         </div>
 

@@ -14,7 +14,8 @@ return new class extends Migration
     {
         Schema::create('user_documents', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(UserProfile::class)->constrained()->onDelete('cascade');;
+            $table->foreignIdFor(UserProfile::class)->constrained()->onDelete('cascade');
+            $table->string('name');
             $table->text('document');
             $table->timestamps();
         });

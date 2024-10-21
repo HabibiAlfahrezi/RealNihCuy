@@ -1,6 +1,7 @@
 @extends('dashboard.layouts.base')
 @section('content')
 
+@include('dashboard.components.partials.alert')
 <div class="bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Company Header -->
@@ -12,30 +13,40 @@
           <p class="text-gray-600 text-sm">We Design Delightful Digital Experiences</p>
         </div>
       </div>
-      <div class="mt-4 md:mt-0 w-full md:w-auto">
+      {{-- <div class="mt-4 md:mt-0 w-full md:w-auto">
         <button class="px-4 py-2 bg-blue-500  w-full text-white rounded-md hover:bg-blue-600">+ Follow</button>
-      </div>
+      </div> --}}
     </div>
 
     <!-- Company Info -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 text-sm border-b border-borderAbu pb-8">
-      <div class=" flex flex-col justify-center items-center">
-        <p class="">Website</p>
-        <a href="{{ Auth::user()->company->website }}" class="text-blue-500 font-semibold text-[16px] text-md hover:underline">{{ Auth::user()->company->website ?? 'No website available.' }}</a>
+      <div class="flex flex-col justify-center items-center">
+        <p class="font-medium">Website</p>
+        <a href="{{ Auth::user()->company->website }}" class="text-blue-500 font-semibold text-md hover:underline">
+          {{ Auth::user()->company->website ?? 'No website available.' }}
+        </a>
       </div>
-      <div class=" flex flex-col justify-center items-center">
-        <p class="">Location</p>
-        <p class=" font-semibold text-[16px] text-md">{{ Auth::user()->company->location ?? 'No location available.' }}</p>
+      
+      <div class="flex flex-col justify-center items-center">
+        <p class="font-medium">Location</p>
+        <p class="font-semibold text-md">{{ Auth::user()->company->location ?? 'No location available.' }}</p>
       </div>
-      <div class=" flex flex-col justify-center items-center">
-        <p class="">Company Size</p>
-        <p class=" font-semibold text-[16px] text-md">{{ Auth::user()->company->employe  ?? 'No size available.' }} Employees</p>
+      
+      <div class="flex flex-col justify-center items-center">
+        <p class="font-medium">Company Size</p>
+        <p class="font-semibold text-md text-center capitalize">
+          {{ Auth::user()->company->employe ?? 'No size available.' }} Employees
+        </p>
       </div>
-      <div class=" flex flex-col justify-center items-center">
-        <p class="">Company Type</p>
-        <p class=" font-semibold text-[16px] text-md capitalize">{{ Auth::user()->company->industry ?? 'No type available.' }}</p>
+      
+      <div class="flex flex-col justify-center items-center">
+        <p class="font-medium">Company Type</p>
+        <p class="font-semibold text-md capitalize">
+          {{ Auth::user()->company->industry ?? 'No type available.' }}
+        </p>
       </div>
     </div>
+    
 
     <!-- Main Content -->
     <div class="flex flex-col lg:flex-row  lg:space-y-0 lg:space-x-8">

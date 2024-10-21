@@ -35,9 +35,9 @@
   >
     <!-- Sidebar Menu -->
     <nav
-      class=" px-4 py-4  lg:px-6"
-      x-data="{selected: $persist('Dashboard')}"
-    >
+    
+    class="px-4 py-4 lg:px-6">
+    
       <!-- Menu Group -->
       @if (Auth::user()->prosesi === 'admin') 
         <div>

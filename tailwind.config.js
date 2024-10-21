@@ -338,6 +338,7 @@ module.exports = {
         },
       });
     },
+    require('tailwind-scrollbar-hide') // Add this line
   ],
 }
 

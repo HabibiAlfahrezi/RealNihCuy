@@ -27,7 +27,7 @@ class CompanyController extends Controller
     public function index(){
         $job = Pekerjaan::with('company', 'applicant')->where('company_id', Auth::user()->company->id)->first();
 
-        $pekerjaan = Pekerjaan::with('type')->where('company_id', Auth::user()->company->id)->paginate(2);
+        $pekerjaan = Pekerjaan::with('type')->where('company_id', Auth::user()->company->id)->paginate(5);
         $company = Company::with('pekerjaan', 'applicant')->where('user_id', Auth::user()->id)->first();
 
         $totalViews = $company ? $company->pekerjaan->sum(function($job) {
@@ -108,7 +108,12 @@ class CompanyController extends Controller
         $company = Auth::user()->company;
         
         // Melampirkan techs ke company menggunakan attach
-        $company->tech()->sync($techArray);
+        try {
+            $company->tech()->sync($techArray);
+            return redirect()->back()->with('success', 'Tech berhasil diupdate');
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('error', 'Tech gagal diupdate');
+        }
         return redirect()->back();
     }
     public function companyUpdate(Request $request){
@@ -173,7 +178,8 @@ class CompanyController extends Controller
                 ['company_id' => $userCompanyId], // Kondisi pencocokan
                 $userValidate // Data yang akan diupdate atau dibuat
             );
-            return redirect()->back()->with('success', 'Data berhasil diupdate!');
+            return redirect()->back()->with('success', 'Social media anda berhasil di update');
+            
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Data gagal diupdate!');
         }
@@ -228,7 +234,7 @@ class CompanyController extends Controller
                 $locationValidate // Data yang akan diupdate atau dibuat
             );
     
-            return redirect()->back()->with('success', 'Data berhasil diupdate!');
+            return redirect()->back()->with('success', 'Location anda berhasil diupdate!');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Data gagal diupdate!');
         }
@@ -345,8 +351,8 @@ class CompanyController extends Controller
         'categories' => ['required'],
         'skills' => ['required'],
         'description' => ['required'],
-        'responsibilities' => ['required', 'array'],
-        'qualification' => ['required', 'array'],
+        'responsibilities' => ['required'],
+        'qualification' => ['required'],
         'experience' => ['required'],
         'expired' => ['required'],
     ]);
@@ -386,8 +392,12 @@ class CompanyController extends Controller
         return redirect()->back()->with('success', $message);
     } catch (\Exception $e) {
         // Tangani kesalahan jika ada
-        $message = $request->input('id') ? 'Pekerjaan gagal diperbarui!' : 'Pekerjaan gagal dibuat!';
-        return redirect()->back()->with('error', $message . ' ' . $e->getMessage());
+        return response()->json([
+            'message' => "GAagal",
+            'error' => $e->getMessage()
+        ]);
+        // $message = $request->input('id') ? 'Pekerjaan gagal diperbarui!' : 'Pekerjaan gagal dibuat!';
+        // return redirect()->back()->with('error', $message . ' ' . $e->getMessage());
     }
 }
 

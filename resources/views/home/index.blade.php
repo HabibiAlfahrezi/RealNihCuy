@@ -8,13 +8,12 @@
         display: block;
     }
 </style>
-@include('dashboard.components.partials.alert')
 
 
 <section>
     <div class="container mx-auto p-4 items-center">
         <div class="grid md:grid-cols-12 mt-12 lg:mt-0 items-center relative ">
-            <div class="w-full sm:w-auto pb-20  md:col-span-6 lg:col-span-7 -mt-10 lg:mt-10 overflow-hidden">
+            <div class="w-full sm:w-auto pb-20  md:col-span-6 lg:col-span-7 -mt-10 lg:mt-10 overflow-hidden" data-aos="fade-down"    data-aos-duration="1500" >
                 <h4 class="font-montserrat font-[550] text-5xl lg:text-6xl xl:text-8xl tracking-tight">Your Dream Careers Starts
                     <span class=" lg:flex items-center lg:w-[560px]">
                         Here
@@ -77,7 +76,7 @@
                 </div>
 
             </div>
-            <div class="w-full md:col-span-6 lg:col-span-5 hidden md:block ">
+            <div class="w-full md:col-span-6 lg:col-span-5 hidden md:block " data-aos="fade-left" data-aos-duration="1500" >
                 <img src="{{ asset('img/bg-hero.jpg') }}" class="w-full lg:w-full lg:h-auto md:absolute lg:relative md:-top-10 lg:top-0 md:w-[400px] md:h-[350px]" alt="">
                 <div class="md:grid md:grid-cols-2 gap-6 md:mt-73 lg:mt-6 md:pl-22 xl:pl-28  ">
                     <!-- Job Section -->
@@ -115,7 +114,7 @@
 
 
 <section class="bg-purple-50 mt-10 md:mt-8">
-    <div class="container mx-auto ">
+    <div class="container mx-auto " data-aos="fade-up" data-aos-duration="1000">
         <p class="font-thin text-xl text-center md:text-start">Join Connect Today</p>
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-y-4 md:gap-8 mt-2 lg:mt-4">
             <div class="lg:col-span-5 md:text-left">
@@ -148,12 +147,13 @@
         <div class="container mx-auto">
             <div class="flex flex-wrap items-center justify-center lg:justify-between">
                 <!-- Bagian Gambar -->
-                <div class="hidden lg:w-1/2 lg:flex justify-center mb-10 lg:mb-0">
+                <div class="hidden lg:w-1/2 lg:flex justify-center mb-10 lg:mb-0" data-aos="fade-right" data-aos-duration="1500"  data-aos-offset="300"
+                >
                     <img src="{{ asset('img/laptopw.png') }}" class="w-full max-w-sm lg:max-w-lg" alt="">
                 </div>
     
                 <!-- Bagian Teks -->
-                <div class="w-full lg:w-1/2 text-center lg:text-left">
+                <div class="w-full lg:w-1/2 text-center lg:text-left" data-aos="fade-up"  data-aos-duration="1500"  data-aos-offset="400">
                     <h4 class="font-thin text-xl mb-2 lg:my-5 ">Create Profile</h4>
                     <h2 class="text-4xl lg:text-6xl font-medium font-poppins ">Build Your Personal 
                         <span class="block">Account Profile</span>
@@ -171,14 +171,14 @@
     <div class="container mx-auto">
         <div class="flex flex-wrap  lg:flex-nowrap items-center">
             <!-- Bagian Teks -->
-            <div class="lg:w-1/2 mb-6 lg:mb-0 mr-6">
+            <div class="lg:w-1/2 mb-6 lg:mb-0 mr-6" data-aos="fade-up" data-aos-duration="1500" >
                 <h2 class="text-4xl lg:text-6xl  font-medium text-left  font-poppins text-gray-900 tracking-tight">Let's us help you choose the category you want</h2>
                 <p class=" text-md md:text-lg mt-4 lg:mt-6 text-left">But I must explain to you how all this mistaken idea of pleasure and praising pain was born and I will teach you.</p>
             </div>
 
             <!-- Kategori -->
     
-            <div class="lg:w-1/2 w-full lg:grid lg:grid-cols-2 max-w-7xl mx-auto  gap-6 hidden ">
+            <div class="lg:w-1/2 w-full lg:grid lg:grid-cols-2 max-w-7xl mx-auto  gap-6 hidden " data-aos="fade-left" ata-aos-duration="1500" data-aos-offset="200">
                 @if ($categories->count() > 0)
                     @foreach ($categories->take(2) as $category)
                         @php
@@ -201,7 +201,7 @@
             </div>
         </div>
 
-        <div class="md:w-1/2 w-full flex overflow-x-auto max-w-7xl mx-auto  gap-6 md:hidden no-scrollbar">
+        <div class="md:w-1/2 w-full flex overflow-x-auto max-w-7xl mx-auto  gap-6 md:hidden no-scrollbar" >
             @if ($categories->count() > 0)
                 @foreach ($categories->take(6) as $category)
                     @php
@@ -229,7 +229,7 @@
         
 
         <!-- Kategori Lainnya -->
-        <div class="mx-auto  lg:mt-10 hidden md:block">
+        <div class="mx-auto  lg:mt-10 hidden md:block" data-aos="fade-up" data-aos-duration="500" data-aos-duration="300">
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-6">
                 @foreach ($categories->slice(2, 4) as $category)
                     @php
@@ -257,7 +257,7 @@
 
 
 <section>
-    <div class="container mt-12">
+    <div class="container mt-12" data-aos="zoom-in-up" data-aos-duration="500" data-aos-offset="200">
         <div class="text-center">
             <p class="font-light text-xl mb-2">Your Dream Jobs</p>
             <h4 class="font-poppins font-medium text-4xl lg:text-6xl">Explore and Find <br> your Job Here</h4>
@@ -651,14 +651,14 @@
 
 <section class="">
     <div class="container mx-auto mt-12 px-4">
-        <p class="font-light text-xl mb-2">Top Companies</p>
+        <p class="font-light text-xl mb-2"  data-aos="fade-right" data-aos-duration="500" data-aos-offset="200">Top Companies</p>
         <div class="flex flex-col lg:flex-row justify-between space-y-6 lg:space-y-0">
             <!-- Left section -->
             <div class="lg:w-1/3">
-                <h4 class="text-4xl lg:text-6xl font-poppins font-medium">Best Places to Work 2024</h4>
+                <h4 class="text-4xl lg:text-6xl font-poppins font-medium" data-aos="fade-right" data-aos-duration="500" data-aos-offset="200">Best Places to Work 2024</h4>
             </div>
             <!-- Right section -->
-            <div class="lg:w-1/3">  
+            <div class="lg:w-1/3" data-aos="fade-left" data-aos-duration="500" data-aos-offset="300">  
                 <p class="text-sm lg:text-base">
                     Leverage the job finder's company review section to gain insights into employee experiences at different companies.
                 </p>    
@@ -737,13 +737,13 @@
 <section class="mt-12">
     <div class="container">
         <div class="py-6 text-center">
-            <h1 class="lg:text-6xl text-4xl font-medium  font-poppins text-gray-800">Why Connect is Right <span class="md:block">for You?</span></h1>
+            <h1 class="lg:text-6xl text-4xl font-medium  font-poppins text-gray-800" data-aos="fade-right" data-aos-duration="500" data-aos-offset="200">Why Connect is Right <span class="md:block">for You?</span></h1>
             <div class="mt-6 flex justify-center gap-2 md:gap-4 md:text-base text-sm">
-                <button class="bg-yellow-50 py-2 px-4 md:px-6 rounded-full ">Make</button>
-                <button class="bg-green-50 py-2 px-4 md:px-6 rounded-full ">it</button>
-                <button class="bg-purple-50 py-2 px-4 md:px-6 rounded-full ">easier</button>
-                <button class="bg-gray-200 py-2 px-4 md:px-6 rounded-full ">with</button>
-                <button class="bg-primary py-2 px-4 md:px-6 rounded-t-full rounded-bl-full  text-white">Connect</button>
+                <button class="bg-yellow-50 py-2 px-4 md:px-6 rounded-full "data-aos="fade-right" data-aos-duration="500" data-aos-offset="240">Make</button>
+                <button class="bg-green-50 py-2 px-4 md:px-6 rounded-full "data-aos="fade-right" data-aos-duration="500" data-aos-offset="280">it</button>
+                <button class="bg-purple-50 py-2 px-4 md:px-6 rounded-full "data-aos="fade-right" data-aos-duration="500" data-aos-offset="320">easier</button>
+                <button class="bg-gray-200 py-2 px-4 md:px-6 rounded-full "data-aos="fade-right" data-aos-duration="500" data-aos-offset="340">with</button>
+                <button class="bg-primary py-2 px-4 md:px-6 rounded-t-full rounded-bl-full  text-white"data-aos="fade-right" data-aos-duration="500" data-aos-offset="380">Connect</button>
             </div>
         </div>
         <div class="mx-auto md:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -982,8 +982,7 @@
             });
         });
 
-        // Activate default tab
-        document.querySelector('.tab-link[href="#all"]').click();
+    
     });
 </script>
 
