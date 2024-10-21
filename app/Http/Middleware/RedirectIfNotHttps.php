@@ -15,6 +15,12 @@ class RedirectIfNotHttps
      */
     public function handle(Request $request, Closure $next): Response
     {
+        // Cek apakah aplikasi berjalan dalam lingkungan lokal
+        if (app()->environment('local')) {
+            return $next($request);
+        }
+
+        // Pastikan hanya meredirect jika permintaan tidak sudah HTTPS
         if (!$request->secure()) {
             return redirect()->secure($request->getRequestUri());
         }
