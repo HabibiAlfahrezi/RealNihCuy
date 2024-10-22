@@ -343,7 +343,7 @@
                                             Salary</label>
                                         <input id="expected_salary" name="expected_salary"
                                             value="{{ old('expected_salary', $profile->expected_salary ?? '') }}"
-                                            type="text" class="mt-1 p-2 border border-gray-300 rounded-md">
+                                            type="number" class="mt-1 p-2 border border-gray-300 rounded-md">
                                         @error('expected_salary')
                                             <p class="text-red-500">{{ $message }}</p>
                                         @enderror

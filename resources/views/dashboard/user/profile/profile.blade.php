@@ -242,7 +242,8 @@
                                 </div>
                                 <div class="md:ml-4 mt-2 md:mt-0">
                                     <p class="font-semibold">{{ $profile->birth_date ?? 'No Birth Date' }}</p>
-                                    <p class="text-gray-500 text-sm">{{ Carbon\Carbon::parse($profile->birth_date)->age }} Years Old</p>
+                                    <p class="text-gray-500 text-sm">{{ Carbon\Carbon::parse($profile->birth_date)->age }}
+                                        Years Old</p>
                                 </div>
                             </div>
 
@@ -253,7 +254,13 @@
                                     <i class="fa-solid fa-money-bill"></i>
                                 </div>
                                 <div class="md:ml-4 mt-2 md:mt-0">
-                                    <p class="font-semibold">Rp. {{ number_format($profile->expected_salary ?? 'No Expected Salary') }}</p>
+                                    <p class="font-semibold">Rp. 
+                                        @if (is_numeric($profile->expected_salary))
+                                            {{ number_format($profile->expected_salary) }}
+                                        @else
+                                            No Expected Salary
+                                        @endif
+                                    </p>
                                     <p class="text-gray-500 text-sm">Expected Salary</p>
                                 </div>
                             </div>
@@ -380,7 +387,7 @@
                                         </div>
                                         <a href="{{ route('experience.delete', $experience->id) }}"
                                             class="border hidden md:block border-borderAbu rounded-lg p-2 group hover:border-primary transition-colors">
-                                                   <i class="fa-solid fa-trash text-lg group-hover:text-primary"></i>
+                                            <i class="fa-solid fa-trash text-lg group-hover:text-primary"></i>
                                         </a>
 
 
@@ -428,7 +435,7 @@
                                         <h4 class="font-bold text-gray-800 text-lg">{{ $education->title }}</h4>
                                         <a href="{{ route('education.delete', $education->id) }}"
                                             class="border hidden md:block border-borderAbu rounded-lg p-2 group hover:border-primary transition-colors">
-                                                   <i class="fa-solid fa-trash text-lg group-hover:text-primary"></i>
+                                            <i class="fa-solid fa-trash text-lg group-hover:text-primary"></i>
                                         </a>
                                     </div>
                                     <div>
