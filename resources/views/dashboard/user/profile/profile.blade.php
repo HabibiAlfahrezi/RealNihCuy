@@ -254,9 +254,9 @@
                                     <i class="fa-solid fa-money-bill"></i>
                                 </div>
                                 <div class="md:ml-4 mt-2 md:mt-0">
-                                    <p class="font-semibold">Rp. 
+                                    <p class="font-semibold">
                                         @if (is_numeric($profile->expected_salary))
-                                            {{ number_format($profile->expected_salary) }}
+                                        Rp. {{ number_format($profile->expected_salary) }}
                                         @else
                                             No Expected Salary
                                         @endif
