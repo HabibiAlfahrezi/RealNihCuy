@@ -29,7 +29,7 @@ return new class extends Migration
             $table->string('current_job')->nullable();
             $table->string('experience_year')->nullable();
             $table->string('work_type')->nullable();
-            $table->string('expected_salary')->nullable();
+            $table->integer('expected_salary')->nullable();
             $table->timestamps();
         });
     }

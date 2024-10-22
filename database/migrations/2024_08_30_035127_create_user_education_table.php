@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('title');
             $table->date('start_date');
             $table->string('location');
-            $table->string('description');
+            $table->text('description');
             $table->timestamps();
         });
     }
