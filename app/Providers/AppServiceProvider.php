@@ -27,8 +27,6 @@ class AppServiceProvider extends ServiceProvider
         // Model::preventLazyLoading();
         Pekerjaan::observe(PekerjaanObserver::class);
         Paginator::useTailwind();
-        if ($this->app->environment('production')) {
-            URL::forceScheme('https');
-        }
+  
     }
 }
