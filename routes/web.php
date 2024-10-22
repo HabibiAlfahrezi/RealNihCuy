@@ -215,6 +215,6 @@ route::view('/companyformlayout', 'dashboard.company.form-layout')->name('dashbo
 
 
 
-if(App::environment('production')){
-    URL::forceScheme('https');
-}
+URL::forceScheme('https');
+// if(App::environment('production')){
+// }
