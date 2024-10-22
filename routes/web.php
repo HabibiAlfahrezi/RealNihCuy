@@ -11,7 +11,10 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\UserController;
 use App\Models\Applicant;
 use App\Models\Company;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
+
 route::view('/sett', 'dashboard.company.profile.sett')->name('sett');
 route::get('/modal', [HomeController::class, 'modal'])->name('modal');
 route::get('/test/{id}', [HomeController::class, 'test'])->name('test');
@@ -212,3 +215,6 @@ route::view('/companyformlayout', 'dashboard.company.form-layout')->name('dashbo
 
 
 
+if(App::environment('production')){
+    URL::forceScheme('https');
+}

@@ -27,6 +27,5 @@ class AppServiceProvider extends ServiceProvider
         // Model::preventLazyLoading();
         Pekerjaan::observe(PekerjaanObserver::class);
         Paginator::useTailwind();
-  
     }
 }
