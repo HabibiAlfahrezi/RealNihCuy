@@ -183,14 +183,18 @@
                                             name="tech[]" 
                                             multiple="multiple">
                                             @if (!empty($companyTech))
-                                                @foreach($allTech as $tech) <!-- Menggunakan `alltechs` untuk mendapatkan semua tech yang tersedia -->
-                                                    <option value="{{ $tech->id }}" {{ in_array($tech->id, $companyTech) ? 'selected' : '' }}>
+                                                @foreach($allTech as $tech)
+                                                    <option value="{{ $tech->id }}" 
+                                                        {{ in_array($tech->id, old('tech', $companyTech)) ? 'selected' : '' }}>
                                                         {{ $tech->name }}
                                                     </option>
                                                 @endforeach
                                             @else
                                                 <p>No skills found.</p>
                                             @endif
+                                        </select>
+                                        
+
                                             </select>
                                         @error('tech')
                                             <p class="text-red-500">{{ $message }}</p>

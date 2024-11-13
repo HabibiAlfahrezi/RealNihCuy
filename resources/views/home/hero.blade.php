@@ -1,97 +1,116 @@
+<!-- Hero Section Container -->
+<div class=" py-7 min-h-screen mt-10 md:mt-0  md:px-16 ">
 
-<section>
-    <div class="container mx-auto p-4 items-center">
-        <div class="grid grid-cols-12 mt-2  items-center  ">
-            <div class="w-full md:col-span-7 -mt-10 ">
-                <h4 class="font-montserrat font-[650] text-8xl tracking-tight">Your Dream Careers Starts
-                    <span class="  flex items-center w-[560px]">
-                        Here
-                        <span class="text-sm font-medium text-gray-400 tracking-normal leading-[24px] mt-1 ml-6">
-                            Job Hunting Made Easy: Get instant alerts for jobs matching your skills and innovative job finder.
-                        </span>
-                    </span>
-                </h4>
+    <!-- Main Content -->
+    <div class="container mx-auto md:flex mt-12 md:mt-28 relative ">
+        <!-- Left Content -->
+        <div class="md:w-1/2">
+            <h4 class="font-montserrat text-[#1c2434] font-semibold  text-4xl lg:text-6xl xl:text-7xl ">Find Your Jobs and Shape Your Future
+            </h4>
+            
+            <div class="input flex justify-between mt-5 md:mt-8 rounded-full z-20 relative">
+                <form action="{{ route('jobs') }}" method="GET" class="md:flex w-full items-center">
+                    <!-- Search Box -->
+                    <div class="flex items-center flex-grow relative md:mr-4">
+                        <input type="text" class="py-2 md:py-3 px-4 w-full  bg-white border  border-gray-400 rounded-xl md:rounded-2xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary" name="keywords" placeholder="Search for a Job">
+                        <!-- Updated search icon -->
+                        <i class="fa-solid fa-magnifying-glass text-gray-500 absolute right-0 text-xl mr-4"></i>
+                    </div>
 
-                <div class="input flex justify-between mt-10 rounded-full">
-                    <form action="{{ route('jobs') }}" method="GET" class="flex w-full items-center">
-                        <!-- Search Box -->
-                        <div class="flex items-center flex-grow relative mr-4">
-                            <input type="text" class="py-3 px-4 w-full  bg-transparent border  border-gray-400 rounded-full focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500" name="keywords" placeholder="Search for a Job">
-                            <!-- Updated search icon -->
-                            <i class="fa-solid fa-magnifying-glass text-gray-500 absolute right-0 text-xl mr-4"></i>
-                        </div>
-                
-                        <!-- Button -->
-                        <div>
-                            <button type="submit" class="bg-purple-500 border text-white font-medium  px-8 py-4 rounded-full transition-colors duration-300 ease-in-out hover:bg-purple-600 mr-4">
-                                Get Started
-                            </button>
-                        </div>
-                    </form>
-                </div>
-
-                <div class=" relative flex justify-center items-center bg-white shadow-md rounded-xl px-4 py-2 space-x-2 max-w-xs mx-auto mt-15">
-                    <!-- Garis Lengkung Kiri (Arrow Kiri) -->
-                    <div class="absolute -left-50 -top-14">
-                        <img src="{{ asset('img/arrowkiri.png') }}" class="w-36 h-26" alt="">
+                    <div class="flex items-center mt-5  md:hidden flex-grow relative md:mr-4">
+                        <input type="text" class="py-2 md:py-3 px-4 w-full  bg-transparent border  border-gray-400 rounded-xl md:rounded-full focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary" name="location" placeholder="Search for a Job Location">
+                        <!-- Updated search icon -->
+                        <i class="fa-solid fa-magnifying-glass text-gray-500 absolute right-0 text-xl mr-4"></i>
                     </div>
-                
-                    <!-- Avatar Circles -->
-                    <div class="flex -space-x-2">
-                        <!-- Avatar 1 (warna pertama) -->
-                        <div class="w-10 h-10 rounded-full bg-yellow-400 border-2 border-white"></div>
-                        <!-- Avatar 2 (warna kedua) -->
-                        <div class="w-10 h-10 rounded-full bg-purple-400 border-2 border-white"></div>
-                        <!-- Avatar 3 (warna ketiga) -->
-                        <div class="w-10 h-10 rounded-full bg-pink-400 border-2 border-white"></div>
+            
+                    <!-- Button -->
+                    <div class="mt-5 md:mt-0">
+                        <button type="submit" class="block  w-full bg-primary border text-white font-medium md:px-4 lg:px-8 py-3 md:py-4 rounded-xl  transition-colors duration-300 ease-in-out hover:bg-secondary outline-none lg:mr-2">
+                            Find Jobs
+                        </button>
                     </div>
-                
-                    <!-- Text -->
-                    <div class="text-gray-700">
-                        <span class="font-bold text-purple-500">60k+ </span>
-                        <span class="font-semibold">Talents Found Their Dream Job!</span>
-                    </div>
-                
-                    <!-- Garis Lengkung Kanan (Arrow Kanan) -->
-                    <div class="absolute -right-40 top-6">
-                        <img src="{{ asset('img/arrowkanan.png') }}" class="w-26 h-26" alt="">
-                    </div>
-                </div>
-
+                </form>
             </div>
-            <div class="w-full md:col-span-5 ">
-                <img src="{{ asset('img/bg-hero.jpg') }}" class="w-full " alt="">
 
-                <div class="grid md:grid-cols-2 gap-6 pl-28 mt-8">
-                    <!-- Job Section -->
-                    <div class="flex flex-col items-center justify-center bg-blue-100 text-black rounded-tr-[80px] rounded-bl-[80px] p-6  transition duration-300 ease-in-out h-50 w-full">
-                        <i class="fa-solid fa-briefcase text-blue-600  text-4xl mb-4"></i>
-                        <h4 class="text-xl font-semibold mb-2">Jobs</h4>
-                        <p class="text-3xl font-bold">{{ $jobs->count() }}</p>
+            <!-- Popular Skills -->
+            <div class="mb-8  hidden   md:flex items-center gap-2">
+                <span class="">Popular skills:</span>
+                <div class="flex  gap-3 mt-2">
+                    <span class="px-3 py-1 bg-secondary text-white font-semibold rounded-lg capitalize text-sm">web design</span>
+                    <span class="px-3 py-1 bg-secondary text-white font-semibold rounded-lg capitalize text-sm">ui/ux design</span>
+                    <span class="px-3 py-1 bg-secondary text-white font-semibold rounded-lg capitalize text-sm">databases</span>
+                    <span class="px-3 py-1 bg-secondary text-white font-semibold rounded-lg capitalize text-sm">business cards</span>
+                </div>
+            </div>
+
+            <p class=" my-4 z-20 relative">
+                We're on a mission to make remote job finding fun, exciting, and hassle-free. Say goodbye to sifting through endless job listings and hello to a personalized job search experience.
+            </p>
+
+            <!-- Trusted Freelancers Section -->
+            <div class="bg-white p-6 rounded-2xl w-full md:w-auto inline-block shadow-md">
+                <div class="flex items-center justify-between">
+                    <span class="font-bold">Trusted Freelancers</span>
+                    <div class="flex text-yellow-400">
+                        ★★★★★
                     </div>
-                
-                    <!-- Company Section -->
-                    <div class="flex flex-col items-center justify-center bg-purple-100 text-black rounded-t-[80px] rounded-br-[80px]  p-6 transition duration-300 ease-in-out h-50 w-full">
-                        <i class="fa-solid fa-building text-purple-600 text-4xl mb-4"></i>
-                        <h4 class="text-xl font-semibold mb-2">Company</h4>
-                        <p class="text-3xl font-bold">{{ $companies->count() }}</p>
+                </div>
+                <div class="md:flex items-center gap-4 mt-2">
+                    <div class="flex -space-x-4">
+                        <div class="w-10 h-10 ">
+                            <img src="{{ asset('img/avatar.jpg') }}" class="rounded-full" alt="">
+                        </div>
+                        <div class="w-10 h-10 ">
+                            <img src="{{ asset('img/download (3).jpg') }}" class="rounded-full" alt="">
+                        </div>
+                        <div class="w-10 h-10 ">
+                            <img src="{{ asset('img/download (5).jpg') }}" class="rounded-full" alt="">
+                        </div>
+                        <div class="w-10 h-10 ">
+                            <img src="{{ asset('img/download.jpg') }}" class="rounded-full" alt="">
+                        </div>
+                    </div>
+                    <div class="mt-4 md:mt-0">
+                        <p class="font-bold">
+                            200+ 
+                        </p>
+                        <p class="">Satisfied Customers</p>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- Right Content -->
+        <div class="hidden md:block absolute right-0 z-10  -mt-24">
+            <img src="{{ asset('/img/heroPng.png') }}" alt="Freelancer working" class="w-full h-auto sm:h-[600px] md:h-[800px] object-cover">
 
-        {{-- <div class="mt-20">
-            <h4 class="font-medium text-xl font-poppins mb-2">Several Companies are Ready to Help You</h4>
-            <div class="flex flex-wrap gap-x-3">
-                @foreach ($companies as $company)
-                    <a href="{{ route('jobs', $company->id) }}">
-                        <img src="{{ asset('storage/' . $company->logo) }}" class="w-10 h-10 rounded-full mr-2 grayscale hover:grayscale-0" alt="">
-                    </a>
-                @endforeach
+            
+            <!-- Floating Card -->
+            <div class="absolute bottom-24 right-12 bg-white p-6 rounded-2xl shadow-lg">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-12 h-12 bg-gray-200 ">
+                        <img src="{{ asset('img/download (5).jpg') }}" class="rounded-full" alt="">
+                    </div>
+                    <div>
+                        <p class="font-bold">@jenny</p>
+                        <p class="">UI/UX Designer</p>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <div class="flex items-center gap-2">
+                        <div class="w-6 h-6 bg-gray-100 ">
+                            <img src="{{ asset('img/project.png') }}" alt="">
+                        </div>
+                        <span class="-mt-1">80+ projects completed</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-6 h-6 bg-gray-100 ">
+                            <img src="{{ asset('img/income.png') }}" alt="">
+                        </div>
+                        <span class="-mt-1">$30 per hour</span>
+                    </div>
+                </div>
             </div>
-        </div> --}}
-
-       
+        </div>
     </div>
-</section>
+</div>

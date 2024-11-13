@@ -10,7 +10,7 @@
     x-transition:leave="transition ease-in duration-150"
     x-transition:leave-start="opacity-100"
     x-transition:leave-end="opacity-0"
-    class="fixed inset-0 z-30 flex items-end bg-black bg-opacity-50 sm:items-center sm:justify-center"
+    class="fixed inset-0 z-30 flex items-end bg-black bg-opacity-50 sm:items-center sm:justify-center md:hidden"
     style="display: none;" 
 >
     <!-- Modal -->
@@ -24,7 +24,7 @@
         x-transition:leave-end="opacity-0 transform translate-y-1/2"
         @click.away="isModalOpen = false"
         @keydown.escape="isModalOpen = false"
-        class="w-full px-2 py-4 overflow-hidden bg-white rounded-t-lg dark:bg-gray-800 sm:rounded-lg sm:m-4 sm:max-w-xl"
+        class="w-full px-2 py-4 overflow-hidden bg-white rounded-t-lg dark:bg-gray-800 sm:rounded-lg sm:m-4 sm:max-w-xl "
         role="dialog"
     >
         <!-- Modal header -->
@@ -69,7 +69,7 @@
             <button
             form="searchForm"
                  type="submit"
-                class="w-full px-5 py-3 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-primary border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+                class="w-full px-5 py-3 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-primary border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-colorHover hover:bg-colorHover focus:outline-none focus:shadow-outline-purple"
             >
             Search
             </button>

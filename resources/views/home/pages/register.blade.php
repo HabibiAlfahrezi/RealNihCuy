@@ -5,16 +5,14 @@
     $activeTab = session('active_tab', 'job-seeker');
     $activeTab = old('active_tab', $activeTab);
 @endphp
-<section class="bg-gray-50 pt-10">
-    <div class="container mx-auto flex flex-wrap items-center">
-        <div class="w-full md:w-1/2 px-4 mb-8 md:mb-0">
-            <div class="flex items-center md:mb-10 justify-center md:justify-start">
-                <img src="{{ asset('image/logo/logo.png') }}" alt="Logo" class="h-10 w-auto">
-    
-            </div>
-            <img src="{{ asset('image/gambar/register.png') }}" alt="Register Image" class="hidden md:block">
-        </div>
-        <div class="w-full md:w-1/2 px-4">
+<section class="border border-black bg-gray-50 ">
+    <div class=" flex flex-wrap  ">
+        <a href="/" class="hidden md:block md:w-7/12  ">
+            <img src="{{ asset('img/loginMale.jpg') }}" 
+                class=" w-full h-screen object-cover" 
+                alt="Office background">
+        </a>
+        <div class="w-full md:w-5/12 px-8 pt-4 ">
             <div class="flex justify-center space-x-4 mb-6 mx-auto w-full max-w-md">
                 <p id="job-seeker-tab" class="font-semibold {{ $activeTab == 'job-seeker' ? 'text-primary' : 'text-gray-500' }} cursor-pointer">Job Seeker</p>
                 <p id="company-tab" class="font-semibold {{ $activeTab == 'company' ? 'text-primary' : 'text-gray-500' }} cursor-pointer">Company</p>
@@ -66,19 +64,21 @@
                 <form action="{{ route('account.companyStore') }}" method="POST" class="space-y-4" enctype="multipart/form-data">
                     @csrf
                     <input type="hidden" name="active_tab" value="company">
-                    <div>
-                        <label for="company-name" class="block text-gray-700 font-semibold mb-2">Full Name</label>
-                        <input type="text" id="company-name" name="name" value="{{ old('name')  }}" placeholder="Enter Your Full Account Name" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
-                        @if ($errors->has('name'))
-                            <p class="text-red-500 mt-2">{{ $errors->first('name') }}</p>
-                        @endif
-                    </div>
-                    <div>
-                        <label for="company-name" class="block text-gray-700 font-semibold mb-2">Company Name</label>
-                        <input type="text" id="company-name" name="company_name" value="{{ old('company_name') }}"  placeholder="Enter Your Company Name" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
-                        @if ($errors->has('company_name'))
-                            <p class="text-red-500 mt-2">{{ $errors->first('company_name') }}</p>
-                        @endif
+                    <div class="md:flex gap-4 items-center  w-full">
+                        <div class="w-full">
+                            <label for="company-name" class="block text-gray-700 font-semibold mb-2">Full Name</label>
+                            <input type="text" id="company-name" name="name" value="{{ old('name')  }}" placeholder="Enter Your Full Account Name" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                            @if ($errors->has('name'))
+                                <p class="text-red-500 mt-2">{{ $errors->first('name') }}</p>
+                            @endif
+                        </div>
+                        <div class="w-full">
+                            <label for="company-name" class="block text-gray-700 font-semibold mb-2">Company Name</label>
+                            <input type="text" id="company-name" name="company_name" value="{{ old('company_name') }}"  placeholder="Enter Your Company Name" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                            @if ($errors->has('company_name'))
+                                <p class="text-red-500 mt-2">{{ $errors->first('company_name') }}</p>
+                            @endif
+                        </div>
                     </div>
                     <div>
                         <label for="company-logo" class="block text-gray-700 font-semibold mb-2">Company Logo</label>

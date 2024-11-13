@@ -10,7 +10,7 @@
 </style>
 
 
-<section>
+{{-- <section>
     <div class="container mx-auto p-4 items-center">
         <div class="grid md:grid-cols-12 mt-12 lg:mt-0 items-center relative ">
             <div class="w-full sm:w-auto pb-20  md:col-span-6 lg:col-span-7 -mt-10 lg:mt-10 overflow-hidden" data-aos="fade-down"    data-aos-duration="1500" >
@@ -97,23 +97,14 @@
         </div>
 
 
-        {{-- <div class="mt-20">
-            <h4 class="font-medium text-xl font-poppins mb-2">Several Companies are Ready to Help You</h4>
-            <div class="flex flex-wrap gap-x-3">
-                @foreach ($companies as $company)
-                    <a href="{{ route('jobs', $company->id) }}">
-                        <img src="{{ asset('storage/' . $company->logo) }}" class="w-10 h-10 rounded-full mr-2 grayscale hover:grayscale-0" alt="">
-                    </a>
-                @endforeach
-            </div>
-        </div> --}}
-
+       
        
     </div>
-</section>
+</section> --}}
+@include('home.hero')
 
 
-<section class="bg-purple-50 mt-10 md:mt-8">
+<section class="bg-purple-50 mt-10 md:mt-8 md:mx-16">
     <div class="container mx-auto " data-aos="fade-up" data-aos-duration="1000">
         <p class="font-thin text-xl text-center md:text-start">Join Connect Today</p>
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-y-4 md:gap-8 mt-2 lg:mt-4">
@@ -143,7 +134,7 @@
 
 
 @guest 
-    <section class="mt-12 ">
+    <section class="mt-12 md:mx-16 ">
         <div class="container mx-auto">
             <div class="flex flex-wrap items-center justify-center lg:justify-between">
                 <!-- Bagian Gambar -->
@@ -167,9 +158,9 @@
 @endguest
 
 
-<section class=" mt-12 ">
+<section class=" mt-12 md:mx-16">
     <div class="container mx-auto">
-        <div class="flex flex-wrap  lg:flex-nowrap items-center">
+        <div class="flex flex-wrap  lg:flex-nowrap items-center overflow-hidden">
             <!-- Bagian Teks -->
             <div class="lg:w-1/2 mb-6 lg:mb-0 mr-6" data-aos="fade-up" data-aos-duration="1500" >
                 <h2 class="text-4xl lg:text-6xl  font-medium text-left  font-poppins text-gray-900 tracking-tight">Let's us help you choose the category you want</h2>
@@ -256,7 +247,7 @@
 
 
 
-<section>
+<section class="md:mx-16">
     <div class="container mt-12" data-aos="zoom-in-up" data-aos-duration="500" data-aos-offset="200">
         <div class="text-center">
             <p class="font-light text-xl mb-2">Your Dream Jobs</p>
@@ -649,10 +640,10 @@
 
  
 
-<section class="">
+<section class="md:mx-16">
     <div class="container mx-auto mt-12 px-4">
         <p class="font-light text-xl mb-2"  data-aos="fade-right" data-aos-duration="500" data-aos-offset="200">Top Companies</p>
-        <div class="flex flex-col lg:flex-row justify-between space-y-6 lg:space-y-0">
+        <div class="flex flex-col lg:flex-row justify-between space-y-6 lg:space-y-0 overflow-hidden">
             <!-- Left section -->
             <div class="lg:w-1/3">
                 <h4 class="text-4xl lg:text-6xl font-poppins font-medium" data-aos="fade-right" data-aos-duration="500" data-aos-offset="200">Best Places to Work 2024</h4>
@@ -734,7 +725,7 @@
 
 
 
-<section class="mt-12">
+<section class="mt-12 md:mx-16">
     <div class="container">
         <div class="py-6 text-center">
             <h1 class="lg:text-6xl text-4xl font-medium  font-poppins text-gray-800" data-aos="fade-right" data-aos-duration="500" data-aos-offset="200">Why Connect is Right <span class="md:block">for You?</span></h1>
@@ -812,78 +803,79 @@
 </section>
 
 
-
-<div class="container mx-auto py-6  md:px-10 rounded-tl-[60px] rounded-br-[60px]  md:rounded-[60px] md:bg-yellow-50 relative mt-12 ">
-    <div class="grid md:grid-cols-12 ">
-        <div class="col-span-5">
-            <h1 class="text-xl md:text-2xl font-thin text-gray-800 mb-4">Let's Find Your Dream Job</h1>
-            <h2 class="text-4xl md:text-5xl font-poppins font-medium text-gray-900 mb-8">Ready to take your career to the next level?</h2>
-            <p class="font-thin">Our job finder website is more than just a search engine. Sign up today <span class="md:block">and unlock a world of possibilities!</span></p>
-        </div>  
-        <div class=" col-span-7 md:flex flex-col w-full items-end justify-end  relative">
-            <div class="hidden md:block">
-                <div class="absolute -left-10 top-10">
-                    <img src="{{ asset('img/arrowkiri.png') }}" class="w-32 h-32" alt="">
-                </div>
-                <div class="bg-slate-100 rounded-lg p-4 absolute md:right-18  lg:right-80 -top-6 lg:-top-18 rotate-12 shadow-md">
-                    <p class="text-gray-800  mt-2">Google</p>
-                    <div class="flex gap-x-6 w-55">
-                        <p class="text-gray-600 text-xl w-55 font-bold mt-1">Sr. UI/UX Designer</p>
-                        <div class="w-16 h-10 rounded-full bg-red-100 mr-2">
-                            <img src="{{ asset('img/google.svg') }}" alt="">
+<section class="md:mx-16">
+    <div class="container mx-auto py-6  md:px-10 rounded-tl-[60px] rounded-br-[60px]  md:rounded-[60px] md:bg-yellow-50 relative mt-12 ">
+        <div class="grid md:grid-cols-12 ">
+            <div class="col-span-5">
+                <h1 class="text-xl md:text-2xl font-thin text-gray-800 mb-4">Let's Find Your Dream Job</h1>
+                <h2 class="text-4xl md:text-5xl font-poppins font-medium text-gray-900 mb-8">Ready to take your career to the next level?</h2>
+                <p class="font-thin">Our job finder website is more than just a search engine. Sign up today <span class="md:block">and unlock a world of possibilities!</span></p>
+            </div>  
+            <div class=" col-span-7 md:flex flex-col w-full items-end justify-end  relative">
+                <div class="hidden md:block">
+                    <div class="absolute -left-10 top-10">
+                        <img src="{{ asset('img/arrowkiri.png') }}" class="w-32 h-32" alt="">
+                    </div>
+                    <div class="bg-slate-100 rounded-lg p-4 absolute md:right-18  lg:right-80 -top-6 lg:-top-18 rotate-12 shadow-md">
+                        <p class="text-gray-800  mt-2">Google</p>
+                        <div class="flex gap-x-6 w-55">
+                            <p class="text-gray-600 text-xl w-55 font-bold mt-1">Sr. UI/UX Designer</p>
+                            <div class="w-16 h-10 rounded-full bg-red-100 mr-2">
+                                <img src="{{ asset('img/google.svg') }}" alt="">
+                            </div>
+                            
                         </div>
-                        
+                    </div>
+                    <div class="bg-slate-100 rounded-lg p-4 absolute -right-12 top-32 lg:top-12 -rotate-12 shadow-md">
+                    
+                        <p class="text-gray-800  mt-2">Figma</p>
+                        <div class="flex gap-x-6 w-55">
+                            <p class="text-gray-600 text-xl w-55 font-bold mt-1">Senior Figma Designer</p>
+                            <div class="w-16 h-10 rounded-full bg-gray-200 mr-2">
+                                <img src="{{ asset('img/figma.svg') }}" alt="">
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="bg-slate-100 rounded-lg p-4 absolute -right-12 top-32 lg:top-12 -rotate-12 shadow-md">
+                <div class="input flex justify-between mt-6 md:mt-10 rounded-full max-w-2xl mx-auto block md:hidden">
+                    <form action="{{ route('jobs') }}" method="GET" class="flex w-full items-center">
+                        <!-- Search Box -->
+                        <div class="flex items-center flex-grow relative md:mr-4">
+                            <input type="text" class="py-3 px-4 w-full  bg-transparent border  border-borderAbu rounded-l-full md:rounded-full focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary" name="keywords" placeholder="Search for a Job">
+                            <!-- Updated search icon -->
+                            <i class="fa-solid fa-magnifying-glass text-gray-500 absolute right-0 text-xl mr-4"></i>
+                        </div>
                 
-                    <p class="text-gray-800  mt-2">Figma</p>
-                    <div class="flex gap-x-6 w-55">
-                        <p class="text-gray-600 text-xl w-55 font-bold mt-1">Senior Figma Designer</p>
-                        <div class="w-16 h-10 rounded-full bg-gray-200 mr-2">
-                            <img src="{{ asset('img/figma.svg') }}" alt="">
+                        <!-- Button -->
+                        <div>
+                            <button type="submit" class="bg-primary border text-white font-medium  px-6 md:px-8 py-3 rounded-r-full  md:rounded-full transition-colors duration-300 ease-in-out hover:bg-purple-600 mr-4">
+                                Search
+                            </button>
                         </div>
-                    </div>
+                    </form>
                 </div>
-            </div>
-            <div class="input flex justify-between mt-6 md:mt-10 rounded-full max-w-2xl mx-auto block md:hidden">
-                <form action="{{ route('jobs') }}" method="GET" class="flex w-full items-center">
-                    <!-- Search Box -->
-                    <div class="flex items-center flex-grow relative md:mr-4">
-                        <input type="text" class="py-3 px-4 w-full  bg-transparent border  border-borderAbu rounded-l-full md:rounded-full focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary" name="keywords" placeholder="Search for a Job">
-                        <!-- Updated search icon -->
-                        <i class="fa-solid fa-magnifying-glass text-gray-500 absolute right-0 text-xl mr-4"></i>
-                    </div>
-            
-                    <!-- Button -->
-                    <div>
-                        <button type="submit" class="bg-primary border text-white font-medium  px-6 md:px-8 py-3 rounded-r-full  md:rounded-full transition-colors duration-300 ease-in-out hover:bg-purple-600 mr-4">
-                            Search
-                        </button>
-                    </div>
-                </form>
-            </div>
-
-            <div class=" justify-between md:pt-[220px] rounded-full w-full hidden md:flex">
-                <form action="{{ route('jobs') }}" method="GET" class="flex ml-4 lg:ml-32 w-full items-center">
-                    <!-- Search Box -->
-                    <div class="flex  items-center flex-grow relative mr-4">
-                        <input type="text" class="py-3 px-4 w-full bg-transparent border bg-white   rounded-full focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary" name="keywords" placeholder="Search for a Job">
-                        <!-- Updated search icon -->
-                        <i class="fa-solid fa-magnifying-glass text-gray-500 absolute right-0 text-xl mr-4"></i>
-                    </div>
-            
-                    <!-- Button -->
-                    <div>
-                        <button type="submit" class="bg-primary border text-white font-medium  px-8 py-4 rounded-full transition-colors duration-300 ease-in-out hover:bg-purple-600 ">
-                            Get Started
-                        </button>
-                    </div>
-                </form>
+    
+                <div class=" justify-between md:pt-[220px] rounded-full w-full hidden md:flex">
+                    <form action="{{ route('jobs') }}" method="GET" class="flex ml-4 lg:ml-32 w-full items-center">
+                        <!-- Search Box -->
+                        <div class="flex  items-center flex-grow relative mr-4">
+                            <input type="text" class="py-3 px-4 w-full bg-transparent border bg-white   rounded-full focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary" name="keywords" placeholder="Search for a Job">
+                            <!-- Updated search icon -->
+                            <i class="fa-solid fa-magnifying-glass text-gray-500 absolute right-0 text-xl mr-4"></i>
+                        </div>
+                
+                        <!-- Button -->
+                        <div>
+                            <button type="submit" class="bg-primary border text-white font-medium  px-8 py-4 rounded-full transition-colors duration-300 ease-in-out hover:bg-purple-600 ">
+                                Get Started
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 
 
 
@@ -892,7 +884,7 @@
 
 
 
-<section class="mt-20">
+<section class="mt-20 md:mx-16">
     <div class="container  py-12">
         <div class="flex flex-col md:flex-row justify-between items-start ">
             <!-- Logo dan deskripsi -->

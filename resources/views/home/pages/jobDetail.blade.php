@@ -6,7 +6,7 @@
     $currentApplicants = $approved;
     $progressPercentage = $totalApplicants > 0 ? ($currentApplicants / $totalApplicants) * 100 : 0;
 @endphp
-<div class="md:container mx-auto md:px-4 md:py-8 py-4 bg-bgPutih">
+<div class="px-4 md:mx-16 md:py-8 py-4 flex mt-12 md:mt-18 bg-bgPutih">
 
     <div class="">
         <div class="flex flex-col md:flex-row justify-between">
@@ -31,7 +31,7 @@
                                 @endif
                             @else
                                 <!-- Jika pengguna belum melamar -->
-                                <a href="{{ route('apply', $pekerjaan->id) }}" class="cursor-pointer bg-primary text-white px-4 py-2 rounded-full hover:bg-blue-600 transition duration-300">Apply Now</a>
+                                <a href="{{ route('apply', $pekerjaan->id) }}" class="cursor-pointer bg-primary text-white px-4 py-2 rounded-full hover:bg-colorHover transition duration-300">Apply Now</a>
                             @endif
                         
                             <button class="border border-gray-300 py-2 px-4 rounded-xl"><i class="far fa-bookmark"></i></button>
@@ -106,7 +106,7 @@
                                         <a href="{{ route('unapply', $pekerjaan->id) }}" class="w-full text-center bg-transparent border border-primary text-primary px-4 py-2 rounded-full hover:bg-primary hover:text-white transition duration-300">Un Applied</a>
                                     @endif
                                 @else
-                                    <a href="{{ route('apply', $pekerjaan->id) }}" class="w-full text-center bg-primary text-white px-4 py-2 rounded-full hover:bg-blue-600 transition duration-300">Apply Now</a>
+                                    <a href="{{ route('apply', $pekerjaan->id) }}" class="w-full text-center bg-primary text-white px-4 py-2 rounded-full hover:bg-colorHover transition duration-300">Apply Now</a>
                                 @endif
                                 
                                 <button class="w-full border border-gray-300 py-2 px-4 rounded-full"><i class="fas fa-share-alt mr-2"></i>Share</button>

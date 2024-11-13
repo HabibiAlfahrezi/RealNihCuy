@@ -22,26 +22,26 @@
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 text-sm border-b border-borderAbu pb-8">
       <div class="flex flex-col justify-center items-center">
         <p class="font-medium">Website</p>
-        <a href="{{ Auth::user()->company->website }}" class="text-blue-500 font-semibold text-md hover:underline">
+        <a href="{{ Auth::user()->company->website }}" class="text-blue-500 text-md hover:underline">
           {{ Auth::user()->company->website ?? 'No website available.' }}
         </a>
       </div>
       
       <div class="flex flex-col justify-center items-center">
         <p class="font-medium">Location</p>
-        <p class="font-semibold text-md">{{ Auth::user()->company->location ?? 'No location available.' }}</p>
+        <p class= text-md">{{ Auth::user()->company->location ?? 'No location available.' }}</p>
       </div>
       
       <div class="flex flex-col justify-center items-center">
         <p class="font-medium">Company Size</p>
-        <p class="font-semibold text-md text-center capitalize">
+        <p class= text-md text-center capitalize">
           {{ Auth::user()->company->employe ?? 'No size available.' }} Employees
         </p>
       </div>
       
       <div class="flex flex-col justify-center items-center">
         <p class="font-medium">Company Type</p>
-        <p class="font-semibold text-md capitalize">
+        <p class= text-md capitalize">
           {{ Auth::user()->company->industry ?? 'No type available.' }}
         </p>
       </div>
@@ -69,11 +69,11 @@
             <h2 class="text-xl font-semibold">{{ Auth::user()->company->name }} Social Media</h2>
             <div class="flex space-x-2">
               <!-- Edit Button -->
-              <button @click="$dispatch('open-modal', 'social')" class="border border-borderAbu rounded-lg p-1 hover:border-primary transition-colors">
+              <button @click="$dispatch('open-modal', 'social')" class="border border-borderAbu rounded-lg p-2 group hover:border-primary transition-colors">
                 @if (Auth::user()->company->companySocial)
-                  <img src="{{ asset('image/icon/edit.png') }}" class="w-6 h-6" alt="Edit">
+                <i class="fa-solid fa-pencil text-xl text-secondary group-hover:text-primary"></i>
                 @else
-                  <img src="{{ asset('image/icon/plus.png') }}" class="w-6 h-6" alt="Add">
+                <i class="fa-solid fa-plus text-xl text-secondary group-hover:text-primary"></i>
                 @endif
               </button>
             </div>
@@ -82,34 +82,34 @@
           <div class="flex flex-wrap gap-4">
             @if (Auth::user()->company->companySocial) 
               <!-- Instagram -->
-              <div class="flex items-center text-primary text-lg border border-primary px-4 py-2 font-semibold rounded-lg">
+              <a href="https://instagram.com/{{ Auth::user()->company->companySocial->instagram }}" target="_blank" class="flex items-center text-primary text-lg border border-primary px-4 py-2 font-semibold rounded-lg">
                 <img src="{{ asset('img/instagram.png') }}" class="w-8 h-8" alt="Instagram">
                 <p class="ml-3 truncate">{{ Auth::user()->company->companySocial->instagram }}</p>
-              </div>
+              </a>
 
               <!-- GitHub -->
-              <div class="flex items-center text-primary text-lg border border-primary px-4 py-2 font-semibold rounded-lg">
+              <a href="https://github.com/{{ Auth::user()->company->companySocial->github }}" target="_blank" class="flex items-center text-primary text-lg border border-primary px-4 py-2 font-semibold rounded-lg">
                 <img src="{{ asset('img/github.png') }}" class="w-8 h-8" alt="GitHub">
                 <p class="ml-3 truncate">{{ Auth::user()->company->companySocial->github }}</p>
-              </div>
+              </a>
 
               <!-- Facebook -->
-              <div class="flex items-center text-primary text-lg border border-primary px-4 py-2 font-semibold rounded-lg">
+              <a href="https://facebook.com/{{ Auth::user()->company->companySocial->facebook }}" target="_blank" class="flex items-center text-primary text-lg border border-primary px-4 py-2 font-semibold rounded-lg">
                 <img src="{{ asset('img/facebook.png') }}" class="w-8 h-8" alt="Facebook">
                 <p class="ml-3 truncate">{{ Auth::user()->company->companySocial->facebook }}</p>
-              </div>
+              </a>
 
               <!-- Twitter -->
-              <div class="flex items-center text-primary text-lg border border-primary px-4 py-2 font-semibold rounded-lg">
+              <a href="https://twitter.com/{{ Auth::user()->company->companySocial->twitter }}" target="_blank" class="flex items-center text-primary text-lg border border-primary px-4 py-2 font-semibold rounded-lg">
                 <img src="{{ asset('img/twitter.png') }}" class="w-8 h-8" alt="Twitter">
                 <p class="ml-3 truncate">{{ Auth::user()->company->companySocial->twitter }}</p>
-              </div>
+              </a>
 
               <!-- LinkedIn -->
-              <div class="flex items-center text-primary text-lg border border-primary px-4 py-2 font-semibold rounded-lg">
+              <a href="https://linkedin.com/{{ Auth::user()->company->companySocial->linkedin }}" target="_blank" class="flex items-center text-primary text-lg border border-primary px-4 py-2 font-semibold rounded-lg">
                 <img src="{{ asset('img/linkedin.png') }}" class="w-8 h-8" alt="LinkedIn">
                 <p class="ml-3 truncate">{{ Auth::user()->company->companySocial->linkedin }}</p>
-              </div>
+              </a>
             @else
               <p class="text-gray-500 ">No social media available.</p>
             @endif
@@ -123,11 +123,11 @@
           <div class="flex justify-between items-center mb-4 ">
             <h2 class="text-xl font-semibold">Working at {{ Auth::user()->company->name }}</h2>
             <div class="flex space-x-2">
-              <button @click="$dispatch('open-modal', 'image')" class="border border-borderAbu rounded-lg p-1 hover:border-primary transition-colors">
+              <button @click="$dispatch('open-modal', 'image')" class="border border-borderAbu rounded-lg p-2 group hover:border-primary transition-colors">
                 @if (Auth::user()->company->companySocial)
-                  <img src="{{ asset('image/icon/edit.png') }}" class="w-6 h-6" alt="Edit">
+                <i class="fa-solid fa-pencil text-xl text-secondary group-hover:text-primary"></i>
                 @else
-                  <img src="{{ asset('image/icon/plus.png') }}" class="w-6 h-6" alt="Add">
+                <i class="fa-solid fa-plus text-xl text-secondary group-hover:text-primary"></i>
                 @endif
               </button>
             </div>
@@ -205,11 +205,11 @@
           <div class="flex justify-between items-center mb-6">
             <h2 class="text-xl font-semibold">Tech Stack {{ Auth::user()->company->name }}</h2>
             <div class="flex space-x-2">
-              <button @click="$dispatch('open-modal', 'tech')" class="border border-borderAbu rounded-lg p-1 hover:border-primary transition-colors">
+              <button @click="$dispatch('open-modal', 'tech')" class="border border-borderAbu rounded-lg p-2 group hover:border-primary transition-colors">
                 @if (Auth::user()->company->tech)
-                  <img src="{{ asset('image/icon/edit.png') }}" class="w-6 h-6" alt="Edit">
+                <i class="fa-solid fa-pencil text-xl text-secondary group-hover:text-primary"></i>
                 @else
-                  <img src="{{ asset('image/icon/plus.png') }}" class="w-6 h-6" alt="Add">
+                <i class="fa-solid fa-plus text-xl text-secondary group-hover:text-primary"></i>
                 @endif
               </button>
             </div>

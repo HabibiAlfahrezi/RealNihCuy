@@ -5,8 +5,8 @@
 >
   <!-- SIDEBAR HEADER -->
   <div class="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5">
-    <a href="{{ route('home') }}">
-      <img src="{{ asset('image/logo/logo.png') }}" alt="Logo" />
+    <a href="{{ route('home') }}" class="px-4">
+      <img src="{{ asset('img/LogoJobSync.png') }}" alt="Logo" class="w-50"/>
     </a>
 
     <button
@@ -893,7 +893,7 @@
     </nav>
     <!-- Sidebar Menu -->
 
-    <!-- Promo Box -->
+    {{-- <!-- Promo Box -->
     <div
       class="mx-auto mb-10 w-full max-w-60 rounded-sm border border-borderAbu  px-4 py-6 text-center shadow-default"
     >
@@ -908,6 +908,6 @@
         Hire Now
       </a>
     </div>
-    <!-- Promo Box -->
+    <!-- Promo Box --> --}}
   </div>
 </aside>

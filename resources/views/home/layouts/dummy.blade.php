@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project PKL</title>
+    <title>JobHunfify</title>
 
     @vite('resources/css/app.css')
         <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -18,7 +18,7 @@
      <script src="{{ asset('js/init-alpine.js') }}"></script>
      <!-- You need focus-trap.js to make the modal accessible -->
      <script src="{{ asset('js/focus-trap.js') }}" defer></script>
-<body class="px-16">
+<body class="">
    @yield('content') 
 
    

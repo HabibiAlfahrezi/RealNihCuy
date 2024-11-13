@@ -1,4 +1,4 @@
-<section>
+<section class="">
     <div class="container mt-12">
         <div class="text-center">
             <p class="font-light text-xl mb-2">Your Dream Jobs</p>

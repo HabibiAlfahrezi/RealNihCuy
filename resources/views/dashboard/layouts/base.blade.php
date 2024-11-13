@@ -8,8 +8,9 @@
     @notifyCss
     @vite('resources/css/app.css')
     <title>
-        JobSync Dashboard
+        JobHuntify Dashboard
     </title>
+    <link rel="icon" href="{{ asset('img/favicon.ico') }}" type="image/x-icon">
 
 
     <!-- Include CSS files -->
